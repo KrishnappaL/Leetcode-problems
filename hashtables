@@ -1,0 +1,82 @@
+HashSet and HashMap-->Insertion,Deletion,Serach and avoid duplicate vlaues
+class HashSet{
+boolean data[]=new boolean[10000000];
+public void add(int key{
+data[key]=true;
+}
+public void remove(int key){
+data[key]=false;
+}
+public boolean contains(int key){
+return data[key];
+}
+}
+==================================================
+public class Main(){
+public static void manin(String[] args){
+Set<Integer> hashSet=new HashSet<>();
+hashSet.add(1);
+hashSet.add(2);
+hashSet.add(3);
+hashSet.remove(2);
+if(!hashSet.contains(2){
+System.out.println("not present");
+}
+System.out.println(hashSet.size());
+for(Integer i:hashSet){
+System.out.println(i+" ");
+}
+System.out.println("arr in set");
+hashSet.clear();
+if(hashSet.isEmpty()){
+System.out.println("hashset is empty know");
+}
+}
+}
+===============================================
+String aggregateByKey_hashmap(List<Integer> keys){
+Map<Integer,String> hashmap=new HashMap<>();
+for(Type key :keys){
+if(hashmap.containsKey(key)){
+if(hashmap.get(key)){
+return value;
+}
+}
+hashmap.put(key,value);
+}
+return value;
+}
+==========================================================
+public static int[] twoSum(int[] nums, int target) {
+Map<Integer,Integer> m=new HashMap<>();
+        for(int i=0;;i++){
+           int x=nums[i];
+            int y=target-x;
+            if(m.containsKey(y))
+                return new int[] {m.get(y),i};
+            m.put(x,i);
+        }
+ ========================================================================================
+ public static String[] findRestaurant(String[] list1, String[] list2) {
+        Map<String, Integer> mp = new HashMap<>();
+        for (int i = 0; i < list2.length; ++i) {
+            mp.put(list2[i], i);
+        }
+        List<String> ans = new ArrayList<>();
+        int mi = 2000;
+        for (int i = 0; i < list1.length; ++i) {
+            if (mp.containsKey(list1[i])) {
+                int t = i + mp.get(list1[i]);
+                System.out.println(mp.get(list1[i]));
+                if (t < mi) {
+                    ans = new ArrayList<>();
+                    ans.add(list1[i]);
+                    mi = t;
+                } else if (t == mi) {
+                    ans.add(list1[i]);
+                }
+            }
+        }
+        return ans.toArray(new String[0]);
+    }
+        
